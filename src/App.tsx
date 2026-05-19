@@ -106,9 +106,9 @@ export default function App() {
   const nextMonth = () => setCurrentMonth(addMonths(currentMonth, 1));
   const prevMonth = () => setCurrentMonth(subMonths(currentMonth, 1));
 
-  const [mapSpan, setMapSpan] = useState(0.0015);
+  const [mapSpan, setMapSpan] = useState(0.008);
   const handleZoomIn = () => setMapSpan(prev => Math.max(0.0002, prev / 1.5));
-  const handleZoomOut = () => setMapSpan(prev => Math.min(0.02, prev * 1.5));
+  const handleZoomOut = () => setMapSpan(prev => Math.min(0.05, prev * 1.5));
 
   const reviewsRef = useRef<HTMLDivElement>(null);
   
@@ -118,12 +118,6 @@ export default function App() {
       const scrollTo = direction === 'left' ? scrollLeft - clientWidth + 40 : scrollLeft + clientWidth - 40;
       reviewsRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
     }
-  };
-
-  // WhatsApp logic (replace with real number)
-  const whatsappNumber = "+48000000000";
-  const handleBookingClick = () => {
-    window.open(`https://wa.me/${whatsappNumber}?text=Hej! Chcę zapytać o pobyt w Boskiej Chacie.`, '_blank');
   };
 
   return (
@@ -470,9 +464,9 @@ export default function App() {
                     </ul>
                   </div>
                   
-                  <button onClick={handleBookingClick} className="w-full py-4 md:py-6 mt-4 md:mt-8 bg-forest text-white rounded-xl md:rounded-2xl font-bold tracking-[2px] text-xs md:text-sm hover:bg-forest/90 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(45,58,40,0.3)] active:transform-none transition-all flex items-center justify-center gap-3 uppercase shadow-xl">
-                    Zarezerwuj termin <MessageCircle className="w-4 h-4 md:w-5 md:h-5" />
-                  </button>
+                  <a href="#rezerwacja" className="w-full py-4 md:py-6 mt-4 md:mt-8 bg-forest text-white rounded-xl md:rounded-2xl font-bold tracking-[2px] text-xs md:text-sm hover:bg-forest/90 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(45,58,40,0.3)] active:transform-none transition-all flex items-center justify-center gap-3 uppercase shadow-xl text-center">
+                    Zarezerwuj termin <CalendarIcon className="w-4 h-4 md:w-5 md:h-5" />
+                  </a>
                 </div>
               </div>
 
