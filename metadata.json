@@ -1,0 +1,6 @@
+{
+  "name": "Boska Chata - Letniskowy dom w Deskurowie",
+  "description": "Klimatyczna strona internetowa wynajmu domku \"Boska Chata\" na łonie natury.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
