@@ -640,53 +640,62 @@ export default function App() {
         </section>
 
         {/* Footer */}
-        <footer className="py-12 md:py-20 px-4 md:px-6 mt-6 md:mt-12 bg-[#232d1f] text-sage-light overflow-hidden relative rounded-t-[40px] md:rounded-t-[80px]">
-          <div className="absolute -bottom-10 -right-10 md:-bottom-20 md:-right-20 opacity-5">
+        <footer className="py-12 md:py-20 px-4 md:px-6 mt-6 md:mt-12 text-sage-light overflow-hidden relative rounded-t-[40px] md:rounded-t-[80px] bg-black">
+          {/* Background Image Layer */}
+          <div className="absolute inset-0 z-0 select-none pointer-events-none">
+            <img 
+              src={allPhotos[2]} 
+              className="w-full h-full object-cover object-[center_40%] md:object-[center_28%] opacity-85" 
+              alt="Tło Kontakt" 
+            />
+            <div className="absolute inset-0 bg-black/40" />
+          </div>
+          <div className="absolute -bottom-10 -right-10 md:-bottom-20 md:-right-20 opacity-5 z-10">
             <TreePine className="w-[250px] h-[250px] md:w-[400px] md:h-[400px]" />
           </div>
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 md:gap-12 relative z-10">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 md:gap-12 relative z-20">
             <div className="text-center md:text-left">
-              <h4 className="font-serif text-3xl md:text-5xl font-bold text-white mb-2 md:mb-4">Boska Chata</h4>
-              <p className="text-[10px] md:text-xs uppercase font-bold opacity-60 tracking-[3px]">Twoje miejsce z dala od zgiełku.</p>
+              <h4 className="font-serif text-3xl md:text-5xl font-bold text-white mb-2 md:mb-4 drop-shadow-md">Boska Chata</h4>
+              <p className="text-[10px] md:text-xs uppercase font-bold opacity-80 tracking-[3px] text-white/90 drop-shadow-md">Twoje miejsce z dala od zgiełku.</p>
             </div>
             
             <div className="flex flex-col gap-6 md:gap-5 w-full md:w-auto items-center">
               <div className="flex flex-col md:flex-row justify-center items-center gap-3 md:gap-5 w-full md:w-auto">
                 <div className="flex flex-row w-full md:w-auto gap-3 md:gap-5">
-                  <a href="#" onClick={(e) => e.preventDefault()} className="flex-1 md:flex-none flex items-center justify-center gap-2 md:gap-3 hover:bg-white hover:text-forest transition-colors duration-300 text-[11px] md:text-sm uppercase font-bold tracking-widest bg-white/10 py-3.5 md:px-8 md:py-4 rounded-[24px] md:rounded-full border border-white/20">
+                  <a href="#" onClick={(e) => e.preventDefault()} className="flex-1 md:flex-none flex items-center justify-center gap-2 md:gap-3 hover:bg-white hover:text-forest transition-colors duration-300 text-[11px] md:text-sm uppercase font-bold tracking-widest bg-black/35 backdrop-blur-sm py-3.5 md:px-8 md:py-4 rounded-[24px] md:rounded-full border border-white/20 text-white shadow-md">
                     <span className="w-2.5 h-2.5 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,1)] hidden md:block"></span>
                     <MessageCircle size={16} className="md:hidden" /> Napisz
                   </a>
-                  <a href="#" onClick={(e) => e.preventDefault()} className="flex-1 md:flex-none flex items-center justify-center gap-2 md:gap-3 hover:bg-white hover:text-forest transition-colors duration-300 text-[11px] md:text-sm uppercase font-bold tracking-widest bg-white/10 py-3.5 md:px-8 md:py-4 rounded-[24px] md:rounded-full border border-white/20">
+                  <a href="#" onClick={(e) => e.preventDefault()} className="flex-1 md:flex-none flex items-center justify-center gap-2 md:gap-3 hover:bg-white hover:text-forest transition-colors duration-300 text-[11px] md:text-sm uppercase font-bold tracking-widest bg-black/35 backdrop-blur-sm py-3.5 md:px-8 md:py-4 rounded-[24px] md:rounded-full border border-white/20 text-white shadow-md">
                     <Phone size={16} /> Zadzwoń
                   </a>
                 </div>
-                <a href="mailto:info@boskas.pl" className="w-full md:w-auto flex flex-none items-center justify-center gap-2 md:gap-3 hover:bg-white hover:text-forest transition-colors duration-300 text-[11px] md:text-sm uppercase font-bold tracking-widest bg-white/10 py-3.5 md:px-8 md:py-4 rounded-[24px] md:rounded-full border border-white/20">
+                <a href="mailto:info@boskas.pl" className="w-full md:w-auto flex flex-none items-center justify-center gap-2 md:gap-3 hover:bg-white hover:text-forest transition-colors duration-300 text-[11px] md:text-sm uppercase font-bold tracking-widest bg-black/35 backdrop-blur-sm py-3.5 md:px-8 md:py-4 rounded-[24px] md:rounded-full border border-white/20 text-white shadow-md">
                   <span className="w-2.5 h-2.5 rounded-full bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,1)] hidden md:block"></span>
                   <Mail size={16} className="md:hidden" /> Info@boskas.pl
                 </a>
               </div>
               
               <div className="flex flex-row justify-center gap-3 w-full md:w-auto">
-                <a href="https://www.facebook.com/profile.php?id=100070429842909" target="_blank" rel="noreferrer" className="flex-1 md:flex-none flex flex-col md:flex-row items-center justify-center gap-1.5 md:gap-0 w-auto md:w-14 h-auto py-3 md:py-0 md:h-14 rounded-[20px] md:rounded-full border border-white/20 hover:bg-white hover:text-forest transition-all bg-white/5 md:bg-transparent">
-                  <Facebook size={20} />
-                  <span className="text-[9px] uppercase font-bold tracking-wider md:hidden mt-0.5 opacity-80">Facebook</span>
+                <a href="https://www.facebook.com/profile.php?id=100070429842909" target="_blank" rel="noreferrer" className="group flex-1 md:flex-none flex flex-col md:flex-row items-center justify-center gap-1.5 md:gap-0 w-auto md:w-14 h-auto py-3 md:py-0 md:h-14 rounded-[20px] md:rounded-full border border-white/20 hover:bg-white hover:text-forest transition-all duration-300 bg-black/30 backdrop-blur-sm">
+                  <Facebook size={20} className="text-white group-hover:text-forest transition-colors duration-300" />
+                  <span className="text-[9px] uppercase font-bold tracking-wider md:hidden mt-0.5 text-white/90 group-hover:text-forest transition-colors duration-300">Facebook</span>
                 </a>
-                <a href="https://www.instagram.com/boska_chata/" target="_blank" rel="noreferrer" className="flex-1 md:flex-none flex flex-col md:flex-row items-center justify-center gap-1.5 md:gap-0 w-auto md:w-14 h-auto py-3 md:py-0 md:h-14 rounded-[20px] md:rounded-full border border-white/20 hover:bg-white hover:text-forest transition-all bg-white/5 md:bg-transparent">
-                  <Instagram size={20} />
-                  <span className="text-[9px] uppercase font-bold tracking-wider md:hidden mt-0.5 opacity-80">Instagram</span>
+                <a href="https://www.instagram.com/boska_chata/" target="_blank" rel="noreferrer" className="group flex-1 md:flex-none flex flex-col md:flex-row items-center justify-center gap-1.5 md:gap-0 w-auto md:w-14 h-auto py-3 md:py-0 md:h-14 rounded-[20px] md:rounded-full border border-white/20 hover:bg-white hover:text-forest transition-all duration-300 bg-black/30 backdrop-blur-sm">
+                  <Instagram size={20} className="text-white group-hover:text-forest transition-colors duration-300" />
+                  <span className="text-[9px] uppercase font-bold tracking-wider md:hidden mt-0.5 text-white/90 group-hover:text-forest transition-colors duration-300">Instagram</span>
                 </a>
-                <a href="https://www.airbnb.pl/rooms/593452868479231026" target="_blank" rel="noreferrer" className="flex-1 md:flex-none flex flex-col md:flex-row items-center justify-center gap-1.5 md:gap-0 w-auto md:w-14 h-auto py-3 md:py-0 md:h-14 rounded-[20px] md:rounded-full border border-white/20 hover:bg-white hover:text-forest transition-all bg-white/5 md:bg-transparent">
-                  <Globe size={20} />
-                  <span className="text-[9px] uppercase font-bold tracking-wider md:hidden mt-0.5 opacity-80">Airbnb</span>
+                <a href="https://www.airbnb.pl/rooms/593452868479231026" target="_blank" rel="noreferrer" className="group flex-1 md:flex-none flex flex-col md:flex-row items-center justify-center gap-1.5 md:gap-0 w-auto md:w-14 h-auto py-3 md:py-0 md:h-14 rounded-[20px] md:rounded-full border border-white/20 hover:bg-white hover:text-forest transition-all duration-300 bg-black/30 backdrop-blur-sm">
+                  <Globe size={20} className="text-white group-hover:text-forest transition-colors duration-300" />
+                  <span className="text-[9px] uppercase font-bold tracking-wider md:hidden mt-0.5 text-white/90 group-hover:text-forest transition-colors duration-300">Airbnb</span>
                 </a>
               </div>
             </div>
           </div>
           
-          <div className="max-w-7xl mx-auto mt-12 md:mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs font-bold uppercase tracking-widest opacity-60">
-            <p className="flex items-center gap-2">&copy; {new Date().getFullYear()} Boska Chata.</p>
-            <p className="mt-4 md:mt-0 opacity-50">Deskurów nad Bugiem</p>
+          <div className="max-w-7xl mx-auto mt-12 md:mt-20 pt-8 border-t border-white/15 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs font-bold uppercase tracking-widest text-white relative z-20">
+            <p className="flex items-center gap-2 drop-shadow-sm text-white">&copy; {new Date().getFullYear()} Boska Chata.</p>
+            <p className="mt-4 md:mt-0 text-white/90 drop-shadow-sm">Deskurów nad Bugiem</p>
           </div>
         </footer>
         
